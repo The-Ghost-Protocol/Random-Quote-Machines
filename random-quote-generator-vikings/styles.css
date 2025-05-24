@@ -1,0 +1,146 @@
+/* Viking/Norse Theme Quote Display with Dark, Stormy Aesthetic */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Skranji:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('tyr-8923935_1280.png');
+  background-color: #0a0e11; 
+  background-size: cover;
+  background-position: center;
+  font-family: 'Skranji', 'Cinzel', serif;
+  color: #e0d6c2; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.quote-container {
+  width: 80%;
+  max-width: 800px;
+  background: rgba(15, 10, 5, 0.8); 
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 2px solid #5a3a20;
+  border-radius: 0; 
+  padding: 40px;
+  box-shadow: 
+    0 0 15px rgba(173, 92, 0, 0.5),
+    inset 0 0 10px rgba(90, 58, 32, 0.7);
+  position: relative;
+  border-image: linear-gradient(to bottom, #5a3a20, #2a1a0c) 1;
+}
+
+.quote-container::before {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 1px solid rgba(173, 92, 0, 0.3);
+  pointer-events: none;
+}
+
+.quote-wrap {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quote {
+  font-size: 24px;
+  line-height: 1.5;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: keep-all;
+  position: relative;
+}
+
+.quote::before,
+.quote::after {
+  content: '"';
+  color: #ad5c00;
+  font-size: 28px;
+  position: absolute;
+}
+
+.quote::before {
+  top: -15px;
+  left: -25px;
+}
+
+.quote::after {
+  bottom: -25px;
+  right: -25px;
+}
+
+.quote.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.author-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #c5a46b;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  position: relative;
+  padding-right: 20px;
+}
+
+.name::before {
+  position: absolute;
+  left: -15px;
+}
+
+.name.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.divider {
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #5a3a20, #ad5c00, #5a3a20, transparent);
+  margin: 25px auto;
+  box-shadow: 0 0 5px rgba(173, 92, 0, 0.7);
+}
+
+.footer {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 14px;
+  color: #ad5c00;
+  opacity: 0.7;
+  z-index: 10;
+  pointer-events: none;
+  text-shadow: 0 0 3px black;
+}

@@ -1,0 +1,148 @@
+/* Spartan War Theme - Bronze, Blood, and Steel */
+@import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@400;700&family=Cinzel:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('ai-generated-8708690_1280.jpg'); 
+  background-color: #1a0a0a; 
+  background-size: cover;
+  background-position: center;
+  font-family: 'Cinzel', 'Grenze Gotisch', serif;
+  color: #e8d8b0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.quote-container {
+  width: 80%;
+  max-width: 800px;
+  background: rgba(20, 10, 5, 0.85); 
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 2px solid #6b4d2a; 
+  border-radius: 0; 
+  padding: 40px;
+  box-shadow: 
+    0 0 20px rgba(150, 50, 0, 0.6), 
+    inset 0 0 15px rgba(100, 50, 0, 0.5);
+  position: relative;
+}
+
+.quote-container::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 1px solid rgba(180, 80, 0, 0.4); 
+  pointer-events: none;
+}
+
+.quote-wrap {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quote {
+  font-size: 24px;
+  line-height: 1.5;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: keep-all;
+  position: relative;
+}
+
+.quote::before,
+.quote::after {
+  content: '⚔'; 
+  color: #c5761c; 
+  font-size: 24px;
+  position: absolute;
+  opacity: 0.7;
+}
+
+.quote::before {
+  top: -15px;
+  left: -25px;
+}
+
+.quote::after {
+  bottom: -25px;
+  right: -25px;
+}
+
+.quote.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.author-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #d4a345;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  position: relative;
+  padding-right: 20px;
+}
+
+.name::before {
+  position: absolute;
+  left: -15px;
+  color: #a52a2a; 
+}
+
+.name.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.divider {
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #6b4d2a, #a52a2a, #6b4d2a, transparent);
+  margin: 25px auto;
+  box-shadow: 0 0 5px rgba(165, 42, 42, 0.7); 
+}
+
+.footer {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 14px;
+  color: #d4a345; 
+  opacity: 0.7;
+  z-index: 10;
+  pointer-events: none;
+  text-shadow: 0 0 3px black;
+}

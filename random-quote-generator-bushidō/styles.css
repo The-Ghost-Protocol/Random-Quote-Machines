@@ -1,0 +1,150 @@
+/* Bushidō Theme - Ink, Bamboo, and Steel */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('ai-generated-8665896_1280.jpg'); 
+  background-color: #0a0a14; 
+  background-size: cover;
+  background-position: center;
+  font-family: 'Libre Baskerville', 'Noto Serif JP', serif;
+  color: #e8e1d5; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.quote-container {
+  width: 80%;
+  max-width: 800px;
+  background: rgba(15, 15, 25, 0.9); 
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 1px solid #3a3220; 
+  border-radius: 2px;
+  padding: 40px;
+  box-shadow: 
+    0 0 15px rgba(0, 20, 30, 0.7), 
+    inset 0 0 20px rgba(75, 60, 30, 0.3); 
+  position: relative;
+}
+
+.quote-container::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1px solid rgba(100, 80, 50, 0.2); 
+  pointer-events: none;
+}
+
+.quote-wrap {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quote {
+  font-size: 22px;
+  line-height: 1.6;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 20px;
+  letter-spacing: 0.3px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  white-space: normal;
+  word-wrap: break-word;
+  position: relative;
+}
+
+.quote::before,
+.quote::after {
+  content: '「'; 
+  color: #d4a345; 
+  font-size: 24px;
+  font-family: 'Noto Serif JP', serif;
+  position: absolute;
+  opacity: 0.5;
+}
+
+.quote::before {
+  top: -10px;
+  left: -20px;
+}
+
+.quote::after {
+  content: '」';
+  bottom: -20px;
+  right: -20px;
+}
+
+.quote.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.author-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #c9b26b; 
+  letter-spacing: 1px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  position: relative;
+  padding-right: 20px;
+  font-style: italic;
+}
+
+.name::before {
+  position: absolute;
+  left: -15px;
+  color: #6b5a3a;
+}
+
+.name.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.divider {
+  width: 50%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #3a3220, #6b5a3a, #3a3220, transparent);
+  margin: 25px auto;
+  box-shadow: 0 0 3px rgba(50, 40, 20, 0.5);
+}
+
+.footer {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 12px;
+  color: #c9b26b; 
+  opacity: 0.6;
+  z-index: 10;
+  pointer-events: none;
+  text-shadow: 0 0 2px black;
+  font-family: 'Noto Serif JP', serif;
+}
